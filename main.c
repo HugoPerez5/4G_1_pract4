@@ -9,10 +9,21 @@
 #use fast_io(e)
 
 int contadorB = 0x00;
+int contadorD = 0x00;
 
+#int_timer0
+void timer0(){
+   contadorB++;
+
+   contadorD++;
+}
 void main (void){
    setup_oscillator(OSC_16MHZ);
    set_tris_b(0x00);
+   set_timer0(0x00); 
+   setup_timer_0(RTCC_INTERNAL |RTCC_DIV_128 | T0_8_BIT);
+   enable_interrupts(int_timer0);
+   enable_interrupts(GLOBAL);
    int indiceB = 0x00, indiceC = 0x00, indiceD = 0x00;
    int display[10] = {63,6,91,79,102,109,125,7,127,103};
    
