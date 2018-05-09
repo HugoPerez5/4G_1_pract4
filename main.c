@@ -13,6 +13,7 @@ int contadorC = 0x00;
 
 void main (void){
    setup_oscillator(OSC_16MHZ);
+   
    int indiceB = 0x00, indiceC = 0x00, indiceD = 0x00;
    int display[10] = {63,6,91,79,102,109,125,7,127,103};
 
