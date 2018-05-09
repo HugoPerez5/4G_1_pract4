@@ -8,23 +8,20 @@
 #use fast_io(d)
 #use fast_io(e)
 
-int contadorC = 0x00;
-
+int contadorB = 0x00;
 
 void main (void){
    setup_oscillator(OSC_16MHZ);
-   
    int indiceB = 0x00, indiceC = 0x00, indiceD = 0x00;
    int display[10] = {63,6,91,79,102,109,125,7,127,103};
-
-
+   
    while(1){
-      if(contadorC > 61){
-         if(indiceC > 9)
-            indiceC = 0x00;
-         output_c(display[indiceC]);
-         indiceC++;
-         contadorC = 0x00;
-      } 
+      if(contadorB > 24 ){
+         if(indiceB > 9)
+            indiceB = 0x00;
+         output_b(display[indiceB]);
+         indiceB++;
+         contadorB = 0x00;
+      }
    }
 }
